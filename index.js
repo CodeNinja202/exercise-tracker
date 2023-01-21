@@ -3,6 +3,7 @@ const app = express()
 const cors = require('cors')
 require('dotenv').config()
 const { JWT_SECRET } = process.env;
+const { PORT = 3000 } = process.env
 
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser')
@@ -134,6 +135,6 @@ app.get('/api/users', (req, res) => {
   })
 
 })
-const listener = app.listen(process.env.PORT || 3000, () => {
-  console.log('Your app is listening on port ' + listener.address().port)
-})
+app.listen(PORT, () => {
+  console.log(`Server is up and running on port ${PORT}`);
+});
