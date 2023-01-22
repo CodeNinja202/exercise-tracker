@@ -1,9 +1,14 @@
-const express = require('express')
-const app = express()
-const cors = require('cors')
 require('dotenv').config()
 const { JWT_SECRET } = process.env;
+
+const express = require('express')
+
+const app = express()
 const { PORT = 3000 } = process.env
+const cors = require('cors')
+
+
+
 
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser')
